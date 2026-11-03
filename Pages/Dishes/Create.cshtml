@@ -1,0 +1,53 @@
+﻿@page
+@model wt_lab5_5razor_talko.Pages.Dishes.CreateModel
+@{
+    ViewData["Title"] = "Добавить блюдо";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Добавить блюдо</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="Dish.Name" class="form-label">Название</label>
+                            <input asp-for="Dish.Name" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Dish.Category" class="form-label">Категория</label>
+                            <input asp-for="Dish.Category" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Dish.Price" class="form-label">Цена</label>
+                            <input asp-for="Dish.Price" class="form-control" type="text" step="0.01" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Dish.Description" class="form-label">Описание</label>
+                            <textarea asp-for="Dish.Description" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Dish.ImageUrl" class="form-label">URL изображения</label>
+                            <input asp-for="Dish.ImageUrl" class="form-control" />
+                        </div>
+                        <div class="form-check mb-3">
+                            <input asp-for="Dish.IsAvailable" class="form-check-input" />
+                            <label asp-for="Dish.IsAvailable" class="form-check-label">Доступно</label>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a asp-page="/Dishes/Index" class="btn btn-secondary">← Назад</a>
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

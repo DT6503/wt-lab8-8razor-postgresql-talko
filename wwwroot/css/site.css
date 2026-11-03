@@ -1,0 +1,330 @@
+/* ==================== ЦВЕТА (по постеру «Дольче») ==================== */
+:root {
+    --olive: #4a5d3a;
+    --olive-light: #6b7d52;
+    --olive-soft: #8a9b6e;
+    --cream: #f5f1e8;
+    --cream-dark: #ebe5d5;
+    --beige: #d4c5a9;
+    --beige-soft: #e8dfc8;
+    --brown: #3d2817;
+    --brown-dark: #2a1a0f;
+    --text: #3a3a3a;
+    --text-muted: #7a7a6a;
+}
+
+/* ==================== ШРИФТЫ ==================== */
+body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    color: var(--brown);
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.lead {
+    font-style: italic;
+    color: var(--olive);
+}
+
+/* ==================== НАВБАР ==================== */
+.navbar {
+    background: var(--brown) !important;
+    border-bottom: 2px solid var(--olive);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--beige-soft) !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Lora', serif;
+    color: var(--beige-soft) !important;
+    font-size: 1.05rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: color 0.25s ease;
+}
+
+    /* Только цвет меняется, никаких скачков и подчёркиваний */
+    .navbar-nav .nav-link:hover {
+        color: var(--olive-soft) !important;
+    }
+
+/* ==================== КАРТОЧКИ ==================== */
+.card {
+    background: #fff;
+    border: 1px solid var(--beige);
+    border-radius: 10px;
+    /* Убираем transform, чтобы карточки не «скакали» */
+    transition: box-shadow 0.25s ease;
+}
+
+    /* При наведении — только мягкая тень, размер не меняется */
+    .card:hover {
+        box-shadow: 0 6px 18px rgba(74, 93, 58, 0.15) !important;
+    }
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--beige);
+}
+
+.card-title {
+    font-style: italic;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+.card-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==================== КНОПКИ ==================== */
+.btn {
+    font-family: 'Lora', serif;
+    border-radius: 6px;
+    padding: 0.5rem 1.3rem;
+    font-weight: 600;
+    /* Только цвет плавно меняется */
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Основная — приглушённый оливковый */
+.btn-primary {
+    background: var(--olive);
+    border: 1px solid var(--olive);
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background: var(--olive-light);
+        border-color: var(--olive-light);
+        color: #fff;
+    }
+
+/* Успех — тоже оливковый, но чуть светлее */
+.btn-success {
+    background: var(--olive-light);
+    border: 1px solid var(--olive-light);
+    color: #fff;
+}
+
+    .btn-success:hover {
+        background: var(--olive-soft);
+        border-color: var(--olive-soft);
+        color: #fff;
+    }
+
+/* Вторичная — тёплый беж */
+.btn-secondary {
+    background: var(--beige);
+    border: 1px solid var(--beige);
+    color: var(--brown);
+}
+
+    .btn-secondary:hover {
+        background: var(--beige-soft);
+        border-color: var(--beige-soft);
+        color: var(--brown);
+    }
+
+/* Опасная — приглушённый бордовый, не ярко-красный */
+.btn-danger {
+    background: #7a3b3b;
+    border: 1px solid #7a3b3b;
+    color: #fff;
+}
+
+    .btn-danger:hover {
+        background: #5e2c2c;
+        border-color: #5e2c2c;
+        color: #fff;
+    }
+
+/* Контурные кнопки */
+.btn-outline-secondary {
+    color: var(--brown);
+    border: 1px solid var(--beige);
+    background: transparent;
+}
+
+    .btn-outline-secondary:hover {
+        background: var(--beige-soft);
+        color: var(--brown);
+        border-color: var(--beige-soft);
+    }
+
+.btn-outline-primary {
+    color: var(--olive);
+    border: 1px solid var(--olive-soft);
+    background: transparent;
+}
+
+    .btn-outline-primary:hover {
+        background: var(--olive);
+        color: #fff;
+        border-color: var(--olive);
+    }
+
+/* ==================== BADGE ==================== */
+.badge {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+}
+
+    .badge.bg-secondary {
+        background: var(--beige) !important;
+        color: var(--brown) !important;
+    }
+
+    .badge.bg-success {
+        background: var(--olive-soft) !important;
+        color: #fff !important;
+    }
+
+    .badge.bg-danger {
+        background: #7a3b3b !important;
+        color: #fff !important;
+    }
+
+/* ==================== ФУТЕР ==================== */
+.footer {
+    background: var(--brown) !important;
+    color: var(--beige-soft) !important;
+    border-top: 2px solid var(--olive);
+    font-style: italic;
+    padding: 1.5rem 0;
+}
+
+    .footer a {
+        color: var(--olive-soft);
+        text-decoration: none;
+    }
+
+/* ==================== ЗАГОЛОВКИ СТРАНИЦ ==================== */
+.display-4 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--brown);
+    font-weight: 700;
+    /* Убрали жёлтую тень */
+}
+
+/* ==================== ФОРМЫ ==================== */
+.form-control {
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    font-family: 'Lora', serif;
+    padding: 0.6rem 1rem;
+    background: #fff;
+    color: var(--text);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .form-control:focus {
+        border-color: var(--olive-soft);
+        box-shadow: 0 0 0 0.15rem rgba(107, 125, 82, 0.2);
+        outline: none;
+    }
+
+.form-label {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--brown);
+    font-weight: 600;
+}
+
+/* ==================== CARD HEADER ==================== */
+.card-header {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+    .card-header.bg-primary {
+        background: var(--olive) !important;
+        color: #fff !important;
+        border-bottom: 1px solid var(--olive);
+    }
+
+        .card-header.bg-primary h1,
+        .card-header.bg-primary h2,
+        .card-header.bg-primary h3,
+        .card-header.bg-primary h4,
+        .card-header.bg-primary h5 {
+            color: #ffffff !important;
+            margin-bottom: 0;
+        }
+
+    .card-header.bg-danger h1,
+    .card-header.bg-danger h2,
+    .card-header.bg-danger h3,
+    .card-header.bg-danger h4,
+    .card-header.bg-danger h5 {
+        color: #ffffff !important;
+        margin-bottom: 0;
+    }
+
+    .card-header.bg-danger {
+        background: #7a3b3b !important;
+        color: #fff !important;
+        border-bottom: 1px solid #5e2c2c;
+    }
+
+/* ==================== ДЕКОРАТИВНАЯ ЛИНИЯ ==================== */
+.gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--olive-soft), transparent);
+    margin: 2rem 0;
+}
+
+/* ==================== УБИРАЕМ ЛЮБЫЕ "СКАЧКИ" ==================== */
+/* На всякий случай отключаем transform и scale у всех интерактивных элементов */
+.card,
+.btn,
+.nav-link,
+a {
+    transform: none !important;
+}
+
+    .card:hover,
+    .btn:hover,
+    .nav-link:hover,
+    a:hover {
+        transform: none !important;
+    }
+
+/* Отступ между контентом и футером */
+main {
+    padding-bottom: 3rem;
+}

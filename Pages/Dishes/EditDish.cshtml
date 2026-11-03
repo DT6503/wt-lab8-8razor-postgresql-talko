@@ -1,0 +1,41 @@
+@page "{id:int}"
+@model wt_lab5_5razor_talko.Pages.Dishes.EditDishModel
+@{
+    ViewData["Title"] = "Редактировать блюдо";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h1>Редактировать блюдо</h1>
+    <!-- ВАЖНО: method="post" и asp-route-id="@Model.Dish.Id" -->
+    <form method="post" asp-route-id="@Model.Dish.Id" class="mt-4 shadow p-4 rounded bg-light">
+
+        <div class="mb-3">
+            <label asp-for="Dish.Name" class="form-label">Название</label>
+            <input asp-for="Dish.Name" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Dish.Category" class="form-label">Категория</label>
+            <input asp-for="Dish.Category" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Dish.Price" class="form-label">Цена</label>
+            <input asp-for="Dish.Price" class="form-control" type="number" step="0.01" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Dish.Description" class="form-label">Описание</label>
+            <textarea asp-for="Dish.Description" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Dish.ImageUrl" class="form-label">Ссылка на картинку</label>
+            <input asp-for="Dish.ImageUrl" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>

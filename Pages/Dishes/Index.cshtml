@@ -1,0 +1,54 @@
+﻿@page
+@model wt_lab5_5razor_talko.Pages.Dishes.IndexModel
+@{
+    ViewData["Title"] = "Каталог блюд";
+    Layout = "_Layout";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold">Каталог блюд</h1>
+            <p class="text-muted">Список блюд предметной области</p>
+        </div>
+        <a asp-page="/Dishes/Create" class="btn btn-primary">+ Добавить блюдо</a>
+    </div>
+
+    <!-- ФОРМА ПОИСКА -->
+    <form method="get" class="mb-4 d-flex">
+        <input type="text" name="Search" value="@Model.Search" placeholder="Введите название блюда..." class="form-control me-2" />
+        <button type="submit" class="btn btn-primary">Найти</button>
+        <a asp-page="./Index" class="btn btn-secondary ms-2">Сброс</a>
+    </form>
+
+    <div class="row g-4">
+        @foreach (var dish in Model.Dishes)
+        {
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm rounded-4">
+                <img src="@dish.ImageUrl" class="card-img-top rounded-top-4"
+                     style="height:200px;object-fit:cover;" alt="@dish.Name" />
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-secondary mb-2 align-self-start">ID: @dish.Id</span>
+                    <h5 class="card-title">@dish.Name</h5>
+                    <p class="text-muted">@dish.Category</p>
+                    <p class="fs-5 fw-bold">@dish.Price руб.</p>
+
+                    <!-- КНОПКИ ДЕЙСТВИЙ -->
+                    <div class="mt-auto d-flex gap-2 flex-wrap">
+                        <a asp-page="/Dishes/Details" asp-route-id="@dish.Id"
+                           class="btn btn-outline-primary btn-sm">Подробнее</a>
+
+                        <!-- ВОТ ОНА, КНОПКА ИЗМЕНИТЬ -->
+                        <a asp-page="/Dishes/EditDish" asp-route-id="@dish.Id"
+                           class="btn btn-outline-secondary btn-sm">Изменить</a>
+
+                        <a asp-page="/Dishes/Delete" asp-route-id="@dish.Id"
+                           class="btn btn-outline-danger btn-sm">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

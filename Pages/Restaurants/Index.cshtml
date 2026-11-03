@@ -1,0 +1,33 @@
+﻿@page
+@model wt_lab5_5razor_talko.Pages.Restaurants.IndexModel
+@{
+    ViewData["Title"] = "Рестораны";
+    Layout = "_Layout";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold" style="color: #4a3d24;">Рестораны-партнёры</h1>
+        <a asp-page="./Create" class="btn btn-success">+ Добавить ресторан</a>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var rest in Model.Restaurants)
+        {
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm rounded-4">
+                <img src="@rest.ImageUrl" class="card-img-top rounded-top-4" style="height:200px; object-fit:cover;" alt="@rest.Title" />
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-warning text-dark mb-2 align-self-start">Рейтинг: @rest.Rating ★</span>
+                    <h5 class="card-title fw-bold" style="color: #4a3d24;">@rest.Title</h5>
+                    <p class="text-muted">📍 @rest.Address</p>
+                    <p class="fw-bold">📞 @rest.Phone</p>
+
+                    <!-- Кнопка удаления -->
+                    <a asp-page="./Delete" asp-route-id="@rest.Id" class="btn btn-sm btn-outline-danger mt-auto w-50">Удалить</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
