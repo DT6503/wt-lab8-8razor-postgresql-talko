@@ -1,42 +1,40 @@
 @page "{id:int}"
 @model wt_lab5_5razor_talko.Pages.Dishes.EditDishModel
 @{
-    ViewData["Title"] = "Редактировать блюдо";
+    ViewData["Title"] = "Edit";
     Layout = "_Layout";
-    Response.ContentType = "text/html; charset=utf-8";
 }
 
 <div class="container mt-4">
-    <h1>Редактировать блюдо</h1>
-    <!-- ВАЖНО: method="post" и asp-route-id="@Model.Dish.Id" -->
+    <h1>&#1048;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100; &#1073;&#1083;&#1102;&#1076;&#1086;</h1>
     <form method="post" asp-route-id="@Model.Dish.Id" class="mt-4 shadow p-4 rounded bg-light">
 
         <div class="mb-3">
-            <label asp-for="Dish.Name" class="form-label">Название</label>
+            <label asp-for="Dish.Name" class="form-label">&#1053;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077;</label>
             <input asp-for="Dish.Name" class="form-control" required />
         </div>
 
         <div class="mb-3">
-            <label asp-for="Dish.Category" class="form-label">Категория</label>
+            <label asp-for="Dish.Category" class="form-label">&#1050;&#1072;&#1090;&#1077;&#1075;&#1086;&#1088;&#1080;&#1103;</label>
             <input asp-for="Dish.Category" class="form-control" required />
         </div>
 
         <div class="mb-3">
-            <label asp-for="Dish.Price" class="form-label">Цена</label>
+            <label asp-for="Dish.Price" class="form-label">&#1062;&#1077;&#1085;&#1072;</label>
             <input asp-for="Dish.Price" class="form-control" type="number" step="0.01" required />
         </div>
 
         <div class="mb-3">
-            <label asp-for="Dish.Description" class="form-label">Описание</label>
+            <label asp-for="Dish.Description" class="form-label">&#1054;&#1087;&#1080;&#1089;&#1072;&#1085;&#1080;&#1077;</label>
             <textarea asp-for="Dish.Description" class="form-control" rows="3"></textarea>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Dish.ImageUrl" class="form-label">Ссылка на картинку</label>
+            <label asp-for="Dish.ImageUrl" class="form-label">&#1050;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1072;</label>
             <input asp-for="Dish.ImageUrl" class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Сохранить</button>
-        <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+        <button type="submit" class="btn btn-primary">&#1057;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1100;</button>
+        <a asp-page="./Index" class="btn btn-secondary">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</a>
     </form>
 </div>
