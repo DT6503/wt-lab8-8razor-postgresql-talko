@@ -1,18 +1,15 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
 WORKDIR /src
-
-COPY ["wt-lab5-5razor-talko.csproj", "./"]
-RUN dotnet restore "wt-lab5-5razor-talko.csproj"
-
 COPY . .
-RUN dotnet publish "wt-lab5-5razor-talko.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
 WORKDIR /app
-
-COPY --from=build /app/publish ./
-
-ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT:-10000}
+COPY --from=build /app/publish .
 EXPOSE 10000
-
 ENTRYPOINT ["dotnet", "wt-lab5-5razor-talko.dll"]
