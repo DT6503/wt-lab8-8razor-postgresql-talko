@@ -1,53 +1,30 @@
 @page
 @model wt_lab5_5razor_talko.Pages.Orders.CreateModel
 @{
-    ViewData["Title"] = "Создать заказ";
+    ViewData["Title"] = "Create";
     Layout = "_Layout";
 }
 
-<div class="container py-4">
-    <h1 style="color: #4a3d24;">Создать заказ</h1>
+<div class="container mt-4">
+    <h1>&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1079;&#1072;&#1082;&#1072;&#1079;</h1>
     <form method="post" class="mt-4 shadow p-4 rounded bg-light">
 
-        <!-- Адрес -->
         <div class="mb-3">
-            <label asp-for="Order.Address" class="form-label">Адрес доставки</label>
+            <label asp-for="Order.Address" class="form-label">&#1040;&#1076;&#1088;&#1077;&#1089;</label>
             <input asp-for="Order.Address" class="form-control" required />
-            <span asp-validation-for="Order.Address" class="text-danger"></span>
         </div>
 
-        <!-- ВЫБОР БЛЮДА -->
         <div class="mb-3">
-            <label asp-for="Order.DishId" class="form-label">Выберите блюдо</label>
-            <select asp-for="Order.DishId" asp-items="Model.Dishes" class="form-select">
-                <option value="">-- Выберите блюдо --</option>
-            </select>
-            <span asp-validation-for="Order.DishId" class="text-danger"></span>
+            <label asp-for="Order.Status" class="form-label">&#1057;&#1090;&#1072;&#1090;&#1091;&#1089;</label>
+            <input asp-for="Order.Status" class="form-control" />
         </div>
 
-        <!-- ВЫБОР КУРЬЕРА -->
         <div class="mb-3">
-            <label asp-for="Order.CourierId" class="form-label">Назначить курьера</label>
-            <select asp-for="Order.CourierId" asp-items="Model.Couriers" class="form-select">
-                <option value="">-- Выберите курьера --</option>
-            </select>
-            <span asp-validation-for="Order.CourierId" class="text-danger"></span>
-        </div>
-
-        <!-- ВВОД СУММЫ -->
-        <div class="mb-3">
-            <label asp-for="Order.TotalPrice" class="form-label">Сумма заказа (руб.)</label>
+            <label asp-for="Order.TotalPrice" class="form-label">&#1057;&#1091;&#1084;&#1084;&#1072;</label>
             <input asp-for="Order.TotalPrice" class="form-control" type="number" step="0.01" required />
-            <span asp-validation-for="Order.TotalPrice" class="text-danger"></span>
         </div>
 
-        <!-- СТАТУС -->
-        <div class="mb-3">
-            <label asp-for="Order.Status" class="form-label">Статус</label>
-            <input asp-for="Order.Status" class="form-control" value="В обработке" />
-        </div>
-
-        <button type="submit" class="btn btn-success">Создать</button>
-        <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+        <button type="submit" class="btn btn-success">&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100;</button>
+        <a asp-page="./Index" class="btn btn-secondary">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</a>
     </form>
 </div>

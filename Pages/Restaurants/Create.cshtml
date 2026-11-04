@@ -1,30 +1,30 @@
 @page
 @model wt_lab5_5razor_talko.Pages.Restaurants.CreateModel
 @{
-    ViewData["Title"] = "Добавить ресторан";
+    ViewData["Title"] = "Create";
     Layout = "_Layout";
 }
 
-<div class="container py-4">
-    <h1 style="color: #4a3d24;">Добавить ресторан</h1>
+<div class="container mt-4">
+    <h1>&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100; &#1088;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1085;</h1>
     <form method="post" class="mt-4 shadow p-4 rounded bg-light">
+
         <div class="mb-3">
-            <label class="form-label">Название</label>
+            <label asp-for="Restaurant.Title" class="form-label">&#1053;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077;</label>
             <input asp-for="Restaurant.Title" class="form-control" required />
         </div>
+
         <div class="mb-3">
-            <label class="form-label">Адрес</label>
+            <label asp-for="Restaurant.Address" class="form-label">&#1040;&#1076;&#1088;&#1077;&#1089;</label>
             <input asp-for="Restaurant.Address" class="form-control" required />
         </div>
+
         <div class="mb-3">
-            <label class="form-label">Телефон</label>
+            <label asp-for="Restaurant.Phone" class="form-label">&#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;</label>
             <input asp-for="Restaurant.Phone" class="form-control" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Ссылка на фото</label>
-            <input asp-for="Restaurant.ImageUrl" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-success">Добавить</button>
-        <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+
+        <button type="submit" class="btn btn-success">&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;</button>
+        <a asp-page="./Index" class="btn btn-secondary">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</a>
     </form>
 </div>

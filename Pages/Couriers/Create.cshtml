@@ -1,30 +1,30 @@
 @page
 @model wt_lab5_5razor_talko.Pages.Couriers.CreateModel
 @{
-    ViewData["Title"] = "Добавить курьера";
+    ViewData["Title"] = "Create";
     Layout = "_Layout";
 }
 
-<div class="container py-4">
-    <h1 style="color: #4a3d24;">Добавить курьера</h1>
+<div class="container mt-4">
+    <h1>&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100; &#1082;&#1091;&#1088;&#1100;&#1077;&#1088;&#1072;</h1>
     <form method="post" class="mt-4 shadow p-4 rounded bg-light">
+
         <div class="mb-3">
-            <label class="form-label">ФИО</label>
+            <label asp-for="Courier.FullName" class="form-label">&#1060;&#1048;&#1054;</label>
             <input asp-for="Courier.FullName" class="form-control" required />
         </div>
+
         <div class="mb-3">
-            <label class="form-label">Телефон</label>
+            <label asp-for="Courier.Phone" class="form-label">&#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;</label>
             <input asp-for="Courier.Phone" class="form-control" required />
         </div>
+
         <div class="mb-3">
-            <label class="form-label">Транспорт</label>
+            <label asp-for="Courier.Vehicle" class="form-label">&#1058;&#1088;&#1072;&#1085;&#1089;&#1087;&#1086;&#1088;&#1090;</label>
             <input asp-for="Courier.Vehicle" class="form-control" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Ссылка на фото</label>
-            <input asp-for="Courier.ImageUrl" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-success">Добавить</button>
-        <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+
+        <button type="submit" class="btn btn-success">&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;</button>
+        <a asp-page="./Index" class="btn btn-secondary">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</a>
     </form>
 </div>
