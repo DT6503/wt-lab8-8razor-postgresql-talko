@@ -9,6 +9,7 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 builder.Services.AddRazorPages();
+builder.Services.AddSession();
 
 // Настройка подключения к БД
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -60,6 +61,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseSession();
 app.UseAuthorization();
 app.MapRazorPages();
 

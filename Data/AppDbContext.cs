@@ -12,6 +12,9 @@ public class AppDbContext : DbContext
     public DbSet<Restaurant> Restaurants => Set<Restaurant>();
     public DbSet<Order> Orders => Set<Order>();
 
+    public DbSet<User> Users => Set<User>();
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Это заставит EF Core всегда использовать UTC для дат

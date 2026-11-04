@@ -15,6 +15,8 @@
                 <a class="navbar-brand brand-script" asp-page="/Index">
                     ✦ Доставка еды ✦
                 </a>
+
+              
                 <button class="navbar-toggler" type="button"
                         data-bs-toggle="collapse" data-bs-target="#navMenu">
                     <span class="navbar-toggler-icon"></span>
@@ -36,6 +38,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Orders/Index">Заказы</a>
                         </li>
+
+                        <!-- ССЫЛКИ НА ВХОД И ПРОФИЛЬ -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Login">Войти</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Profile">Личный кабинет</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/Dishes/Create">Добавить</a>
                         </li>
@@ -45,17 +56,15 @@
         </nav>
     </header>
 
-    <!-- Основной контент, который растягивается -->
     <main role="main" class="flex-grow-1">
         <div class="container pb-3 mt-4">
             @RenderBody()
         </div>
     </main>
 
-    <!-- Футер с mt-auto, чтобы прижиматься к низу -->
     <footer class="border-top footer text-muted mt-auto" style="background-color: #2b2419; padding: 20px 0;">
         <div class="container text-center" style="color: #f5e6c8;">
-            &copy; 2026 - wt_lab5_5razor_talko <a asp-page="/Privacy" style="color: #d4af37; text-decoration: none;"></a>
+            &copy; 2026 - wt_lab5_5razor_talko
         </div>
     </footer>
 
