@@ -5,23 +5,46 @@
     Layout = "_Layout";
 }
 
-<div class="container mt-4">
-    <h1>&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1079;&#1072;&#1082;&#1072;&#1079;</h1>
+<div class="container py-4">
+    <h1 style="color: #4a3d24;">&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1079;&#1072;&#1082;&#1072;&#1079;</h1>
     <form method="post" class="mt-4 shadow p-4 rounded bg-light">
 
+        <!-- Àäðåñ -->
         <div class="mb-3">
-            <label asp-for="Order.Address" class="form-label">&#1040;&#1076;&#1088;&#1077;&#1089;</label>
+            <label asp-for="Order.Address" class="form-label">&#1040;&#1076;&#1088;&#1077;&#1089; &#1076;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1080;</label>
             <input asp-for="Order.Address" class="form-control" required />
+            <span asp-validation-for="Order.Address" class="text-danger"></span>
         </div>
 
+        <!-- ÂÛÁÎÐ ÁËÞÄÀ -->
+        <div class="mb-3">
+            <label asp-for="Order.DishId" class="form-label">&#1042;&#1099;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1073;&#1083;&#1102;&#1076;&#1086;</label>
+            <select asp-for="Order.DishId" asp-items="Model.Dishes" class="form-select">
+                <option value="">-- &#1042;&#1099;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1073;&#1083;&#1102;&#1076;&#1086; --</option>
+            </select>
+            <span asp-validation-for="Order.DishId" class="text-danger"></span>
+        </div>
+
+        <!-- ÂÛÁÎÐ ÊÓÐÜÅÐÀ -->
+        <div class="mb-3">
+            <label asp-for="Order.CourierId" class="form-label">&#1053;&#1072;&#1079;&#1085;&#1072;&#1095;&#1080;&#1090;&#1100; &#1082;&#1091;&#1088;&#1100;&#1077;&#1088;&#1072;</label>
+            <select asp-for="Order.CourierId" asp-items="Model.Couriers" class="form-select">
+                <option value="">-- &#1042;&#1099;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1082;&#1091;&#1088;&#1100;&#1077;&#1088;&#1072; --</option>
+            </select>
+            <span asp-validation-for="Order.CourierId" class="text-danger"></span>
+        </div>
+
+        <!-- ÂÂÎÄ ÑÓÌÌÛ -->
+        <div class="mb-3">
+            <label asp-for="Order.TotalPrice" class="form-label">&#1057;&#1091;&#1084;&#1084;&#1072; &#1079;&#1072;&#1082;&#1072;&#1079;&#1072; (&#1088;&#1091;&#1073;.)</label>
+            <input asp-for="Order.TotalPrice" class="form-control" type="number" step="0.01" required />
+            <span asp-validation-for="Order.TotalPrice" class="text-danger"></span>
+        </div>
+
+        <!-- ÑÒÀÒÓÑ -->
         <div class="mb-3">
             <label asp-for="Order.Status" class="form-label">&#1057;&#1090;&#1072;&#1090;&#1091;&#1089;</label>
-            <input asp-for="Order.Status" class="form-control" />
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="Order.TotalPrice" class="form-label">&#1057;&#1091;&#1084;&#1084;&#1072;</label>
-            <input asp-for="Order.TotalPrice" class="form-control" type="number" step="0.01" required />
+            <input asp-for="Order.Status" class="form-control" value="&#1042; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1077;" />
         </div>
 
         <button type="submit" class="btn btn-success">&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100;</button>
