@@ -4,15 +4,15 @@
 <div class="container mt-4">
     <div class="card shadow rounded-4 border-danger">
         <div class="card-header bg-danger text-white">
-            <h3 class="mb-0">Удалить ресторан</h3>
+            <h3 class="mb-0">&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100; &#1088;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1085;</h3>
         </div>
         <div class="card-body">
-            <p>Вы уверены, что хотите удалить ресторан <strong>@Model.Restaurant?.Title</strong>?</p>
+            <p>&#1042;&#1099; &#1091;&#1074;&#1077;&#1088;&#1077;&#1085;&#1099;, &#1095;&#1090;&#1086; &#1093;&#1086;&#1090;&#1080;&#1090;&#1077; &#1091;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100; &#1088;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1085; <strong>@Model.Restaurant?.Title</strong>?</p>
 
             <form method="post">
                 <input type="hidden" name="id" value="@Model.Restaurant?.Id" />
-                <button type="submit" class="btn btn-danger">Удалить</button>
-                <a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+                <button type="submit" class="btn btn-danger">&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;</button>
+                <a asp-page="./Index" class="btn btn-secondary">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</a>
             </form>
         </div>
     </div>
